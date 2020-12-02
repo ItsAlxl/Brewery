@@ -86,6 +86,7 @@ public class BConfig {
 	//Brew
 	public static boolean colorInBarrels; // color the Lore while in Barrels
 	public static boolean colorInBrewer; // color the Lore while in Brewer
+	public static Material defaultBrewFilter;
 	public static boolean enableEncode;
 	public static boolean alwaysShowQuality; // Always show quality stars
 	public static boolean alwaysShowAlc; // Always show alc%
@@ -219,6 +220,7 @@ public class BConfig {
 		DataSave.autosave = config.getInt("autosave", 3);
 		P.debug = config.getBoolean("debug", false);
 		pukeItem = Material.matchMaterial(config.getString("pukeItem", "SOUL_SAND"));
+		defaultBrewFilter = Material.matchMaterial(config.getString("defaultFilter", "GLOWSTONE_DUST"));
 		hangoverTime = config.getInt("hangoverDays", 0) * 24 * 60;
 		overdrinkKick = config.getBoolean("enableKickOnOverdrink", false);
 		enableHome = config.getBoolean("enableHome", false);

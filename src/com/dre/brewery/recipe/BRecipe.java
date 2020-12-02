@@ -39,6 +39,7 @@ public class BRecipe {
 	private List<RecipeItem> ingredients = new ArrayList<>(); // Items and amounts
 	private int difficulty; // difficulty to brew the potion, how exact the instruction has to be followed
 	private int cookingTime; // time to cook in cauldron
+	private Material filterMaterial; // the item needed to filter in the brewing stand
 	private byte distillruns; // runs through the brewer
 	private int distillTime; // time for one distill run in seconds
 	private byte wood; // type of wood the barrel has to consist of
@@ -123,6 +124,9 @@ public class BRecipe {
 		recipe.age = configSectionRecipes.getInt(recipeId + ".age", 0);
 		recipe.difficulty = configSectionRecipes.getInt(recipeId + ".difficulty", 0);
 		recipe.alcohol = configSectionRecipes.getInt(recipeId + ".alcohol", 0);
+		
+		String filterName = configSectionRecipes.getString(recipeId + ".filter", "");
+		recipe.filterMaterial = Material.matchMaterial(filterName);
 
 		String col = configSectionRecipes.getString(recipeId + ".color", "BLUE");
 		recipe.color = PotionColor.fromString(col);
@@ -414,6 +418,10 @@ public class BRecipe {
 			}
 		}
 		return false;
+	}
+
+	public boolean canDistillWith(Material m) {
+		return filterMaterial == m;
 	}
 
 	public void applyDrinkFeatures(Player player, int quality) {

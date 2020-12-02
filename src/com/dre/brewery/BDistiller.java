@@ -2,7 +2,6 @@ package com.dre.brewery;
 
 import com.dre.brewery.lore.BrewLore;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.BrewingStand;
@@ -97,15 +96,15 @@ public class BDistiller {
 	}
 
 	public static byte hasBrew(BrewerInventory brewer, Brew[] contents) {
-		ItemStack item = brewer.getItem(3); // ingredient
-		boolean glowstone = (item != null && Material.GLOWSTONE_DUST == item.getType()); // need dust in the top slot.
+		ItemStack filter = brewer.getItem(3); // ingredient
+		if (filter == null) {
+			return 1;
+		}
+
 		byte customFound = 0;
 		for (Brew brew : contents) {
 			if (brew != null) {
-				if (!glowstone) {
-					return 1;
-				}
-				if (brew.canDistill()) {
+				if (brew.canDistill() && brew.matchingFilter(filter.getType())) {
 					return 2;
 				} else {
 					customFound = 1;

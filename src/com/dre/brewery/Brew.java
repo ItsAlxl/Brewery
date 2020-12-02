@@ -400,6 +400,10 @@ public class Brew implements Cloneable {
 		return quality;
 	}
 
+	public boolean matchingFilter(Material filter) {
+		return currentRecipe.canDistillWith(filter);
+	}
+
 	public boolean canDistill() {
 		if (immutable) return false;
 		if (currentRecipe != null) {
