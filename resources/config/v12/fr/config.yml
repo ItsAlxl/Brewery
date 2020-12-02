@@ -495,6 +495,9 @@ loadDataAsync: true
 # Temps (en jours) pour que les données d'ivresse restent sauvergardées lorsque le joueur est déconnecté, pour appliquer les effets. [7]
 hangoverDays: 7
 
+# Default distillery filter [Glowstone_Dust]
+defaultFilter: Glowstone_Dust
+
 # Colorer les informations d'objets (lore) au dépend de la qualité dans un tonneau et/ou dans un stand de brassage (l'alambic) [true, true]
 colorInBarrels: true
 colorInBrewer: true

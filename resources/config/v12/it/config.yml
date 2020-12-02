@@ -487,6 +487,9 @@ loadDataAsync: true
 # Tempo in giorni che la sbronza resta in memoria dopo che il giocatore va offline, cioè il tempo per cui i postumi della sbornia durano. [7]
 hangoverDays: 7
 
+# Default distillery filter [Glowstone_Dust]
+defaultFilter: Glowstone_Dust
+
 # Colora la descrizione dell'item in base alla qualità mentre è in un barile o in un alambicco [true, true]
 colorInBarrels: true
 colorInBrewer: true

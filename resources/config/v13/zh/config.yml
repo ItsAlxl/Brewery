@@ -892,6 +892,9 @@ loadDataAsync: true
 # 最大玩家下线记忆时长(单位为天). 饮酒的记忆保持时间, 便于计算宿醉.[7]
 hangoverDays: 7
 
+# Default distillery filter [Glowstone_Dust]
+defaultFilter: Glowstone_Dust
+
 # 饮品上是否显示带颜色的提示, 颜色由执行步骤的正误决定. 第一项为在熟成酒桶内显示颜色, 第二项为在酿造台内显示颜色.[true, true]
 colorInBarrels: true
 colorInBrewer: true

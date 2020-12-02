@@ -896,6 +896,9 @@ loadDataAsync: true
 # Zeit (in Tagen) die Trunkenheitsdaten nach offlinegehen eines Spielers im Speicher verbleiben, um z.B. Kater-Effekte anzuwenden. [7]
 hangoverDays: 7
 
+# Default distillery filter [Glowstone_Dust]
+defaultFilter: Glowstone_Dust
+
 # Färben der Iteminformationen je nach Qualität während sie sich 1. im Fass und/oder 2. im Braustand befinden [true, true]
 colorInBarrels: true
 colorInBrewer: true
