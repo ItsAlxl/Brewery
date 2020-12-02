@@ -610,7 +610,7 @@ public class Brew implements Cloneable {
 	 */
 	public static void distillAll(BrewerInventory inv, Brew[] contents) {
 		for (int slot = 0; slot < 3; slot++) {
-			if (contents[slot] != null) {
+			if (contents[slot] != null && contents[slot].matchingFilter(inv.getItem(3).getType())) {
 				ItemStack slotItem = inv.getItem(slot);
 				PotionMeta potionMeta = (PotionMeta) slotItem.getItemMeta();
 				contents[slot].distillSlot(slotItem, potionMeta);

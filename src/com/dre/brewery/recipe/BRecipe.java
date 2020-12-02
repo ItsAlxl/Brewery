@@ -125,7 +125,7 @@ public class BRecipe {
 		recipe.difficulty = configSectionRecipes.getInt(recipeId + ".difficulty", 0);
 		recipe.alcohol = configSectionRecipes.getInt(recipeId + ".alcohol", 0);
 		
-		String filterName = configSectionRecipes.getString(recipeId + ".filter", "");
+		String filterName = configSectionRecipes.getString(recipeId + ".filter", BConfig.defaultBrewFilterName);
 		recipe.filterMaterial = Material.matchMaterial(filterName);
 
 		String col = configSectionRecipes.getString(recipeId + ".color", "BLUE");
